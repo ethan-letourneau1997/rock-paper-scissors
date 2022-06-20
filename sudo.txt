@@ -1,0 +1,7 @@
+
+function to loop 5 times
+prompt user for input  -
+save input as userSelection -
+run playRound function 
+print results
+add score to scoreboard
