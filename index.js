@@ -1,21 +1,47 @@
-//computer's move
+// html elements defined 
+
+const results = document.getElementById('round-results');
+
+const pScore = document.getElementById('player-score');
+const cScore = document.getElementById('computer-score');
+
+const gameResults = document.getElementById('game-results');
+
+const roundNumber = document.getElementById('round-count');
+
+// initialize scoreboard
+
+let playerScore = 0;
+let computerScore = 0;
+let roundCount = 0;
+
+
+// randomly assigns computers choice
+
 let computerMove = "";
 
 function computerPlay(){
     let randNum = Math.random()*3;
     if (randNum <= 1){
         computerMove = "rock";
+        normalBorder ();
+        changeComputerRockBorder();
     }
     else if (randNum <= 2){
         computerMove = "paper";
+        normalBorder ();
+        changeComputerPaperBorder();
     }
     else{
         computerMove = "scissors";
+        normalBorder ();
+        changeComputerScissorsBorder();
     }
     return computerMove;
 }
 
-// player's move
+// plays through a round
+
 function playRound(playerSelection,computerSelection){
     
     if(playerSelection === computerSelection){
@@ -39,98 +65,98 @@ function playRound(playerSelection,computerSelection){
         results.textContent = [("You lose! " + computerSelection + " beats " + playerSelection + "!")];
     }
 }
-// ------------------------------------------------
 
-// rock event listener
+
+// checks and updates score
+
+function checkScore(playerScore, computerScore){
+    if (playerScore == 5){
+        gameResults.textContent = "you win";
+    }
+    else if (computerScore == 5){
+        gameResults.textContent = "you lose";
+    }
+}
+
+
+// player chooses scissors
 const button1 = document.getElementById('button1');
 button1.addEventListener("click", rockFunction);
 
 function rockFunction(){
     console.log('rock');
     playRound('rock',computerPlay());
-    pScore.textContent = ("player: " + playerScore);
-    cScore.textContent =("computer: " + computerScore);
-    // game('rock',computerPlay());
+    pScore.textContent = (playerScore);
+    cScore.textContent = (computerScore);
+    checkScore(playerScore,computerScore);
+    changeRockBorder ();
+    roundCount++;
+    roundNumber.textContent = (roundCount);
 }
 
-//paper event listener
+// player chooses paper
+
 const button2 = document.getElementById('button2');
 button2.addEventListener("click", paperFunction);
 
 function paperFunction(){
     console.log('paper');
     playRound('paper',computerPlay());
-    pScore.textContent = ("player: " + playerScore);
-    cScore.textContent =("computer: " + computerScore);
+    pScore.textContent = (playerScore);
+    cScore.textContent =(computerScore);
+    checkScore(playerScore,computerScore);
+    changePaperBorder ();
+    roundCount++;
+    roundNumber.textContent = (roundCount);
 }
 
-//scissor event listener
+// player chooses scissors
+
 const button3 = document.getElementById('button3');
 button3.addEventListener("click", scissorFunction);
 
 function scissorFunction(){
     console.log('scissor');
     playRound('scissors',computerPlay());
-    pScore.textContent = ("player: " + playerScore);
-    cScore.textContent =("computer: " + computerScore);
+    pScore.textContent = (playerScore);
+    cScore.textContent =(computerScore);
+    checkScore(playerScore,computerScore);
+    changeScissorsBorder ();
+    roundCount++;
+    roundNumber.textContent = (roundCount);
 }
-// -----------------------------------------------
+ 
+//changes border color on player click / computer choice
 
-// initialize scoreboard
-let playerScore = 0;
-let computerScore = 0;
-
-
-// ------------------------------------------------
-
-// change text 
-const results = document.getElementById('round-results');
-const pScore = document.getElementById('player-score');
-const cScore = document.getElementById('computer-score');
-
-
-// ------------------------------------------------
-let playerPoints = 0;
-let computerPoints = 0;
-
-function game(){
-    for (i = 0; i < 5; i++){
-    // let playerSelection = prompt("Select rock, paper, or scissors");
-    // computerSelection = computerPlay();
-    if (playRound(playerSelection, computerSelection) == ("You lose! " + computerSelection + " beats " + playerSelection + "!")){
-        console.log(("You lose! " + computerSelection + " beats " + playerSelection + "!"));
-        computerPoints++;
-    }
-    else if (playRound(playerSelection, computerSelection) == ("You win! " + playerSelection + " beats " + computerSelection + "!")){
-        console.log(("You win! " + playerSelection + " beats " + computerSelection + "!"));
-        playerPoints++;
-    }
-    else{
-        console.log("It's a tie!!")
-    }
-    console.log("your score: " + playerPoints)
-    console.log("computer score: " + computerPoints)
+function changeRockBorder () {
+    document.getElementById("button1").style.border = '8px Solid #2a9d8f'
 }
-    if(playerPoints > computerPoints){
-        console.log("FINAL SCORE")
-        console.log("your score: " + playerPoints)
-        console.log("computer score: " + computerPoints)
-        console.log("You win!")
-    }
-    else if(playerPoints < computerPoints){
-        console.log("FINAL SCORE")
-        console.log("your score: " + playerPoints)
-        console.log("computer score: " + computerPoints)
-        console.log("You lose!")
-    }
-    else{
-        console.log("FINAL SCORE")
-        console.log("your score: " + playerPoints)
-        console.log("computer score: " + computerPoints)
-        console.log("Its a tie!")
-    }
+function changePaperBorder () {
+    document.getElementById("button2").style.border = '8px Solid #2a9d8f'
 }
-// game();
+function changeScissorsBorder () {
+    document.getElementById("button3").style.border = '8px Solid #2a9d8f'
+}
+
+function changeComputerRockBorder () {
+    document.getElementById("button4").style.border = '8px Solid #2a9d8f'
+}
+function changeComputerPaperBorder () {
+    document.getElementById("button5").style.border = '8px Solid #2a9d8f'
+}
+function changeComputerScissorsBorder () {
+    document.getElementById("button6").style.border = '8px Solid #2a9d8f'
+}
+
+// returns border selection to default on new selection 
+function normalBorder () {
+    document.getElementById('button1').style.border = '2px solid black';
+    document.getElementById('button2').style.border = '2px solid black';
+    document.getElementById('button3').style.border = '2px solid black';
+    document.getElementById('button4').style.border = '2px solid black';
+    document.getElementById('button5').style.border = '2px solid black';
+    document.getElementById('button6').style.border = '2px solid black';
+}
 
 
 

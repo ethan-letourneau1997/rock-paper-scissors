@@ -2,9 +2,116 @@
     margin: 0;
     padding: 0;
 }
+
 .header{
-    height: 80px;
-    background-color: aqua;
+    height: 7vh;
+    background-color: #2a9d8f;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
+    color: #fefae0;
+}
+.button{
+    background-color: #fefae0;
+}
+
+.middle{
+    display: flex;
+    height: 28vh;
+    background-color: #f4a261;
+    align-items: center;
+}
+
+.middle-left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+    border-right: 2px solid #e76f51;
+    height: 80%;
+    
+}
+
+.middle-right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+.button{
+    height: 100px;
+    width: 100px;
+}
+
+.rock{
+    background-image: url(img/icons8-rock-100.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paper{
+    background-image: url(img/icons8-paper-100.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scissors{
+    background-image: url(img/icons8-scissor-64.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.middle-bottom{
+    background-color: #2a9d8f;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fefae0;
+    font-size: 30px;
+}
+
+.very-bottom{
+    background-color: #e9c46a;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.scoreboard{
+    background-color: #f4a261;
+    height: 300px;
+    width: 400px;
+    border: 2px solid black;
+}
+
+.scoreboard-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 50%;
+    width:100%;
+}
+
+.scoreboard-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 50%;
+    width:100%;
+}
+.box{
+    border: 1.5px solid black;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 5px;
 }

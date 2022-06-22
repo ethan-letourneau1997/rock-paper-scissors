@@ -13,16 +13,42 @@
         <h1>Rock, Paper, Scissors</h1>
     </header>
     <main>
-        <button id = "button1" class="button" >Rock</button>
-        <button id = "button2" class="button" >Paper</button>
-        <button id = "button3" class="button" >Scissors</button>
-
-        <div id="round-results">Blank</div>
-
-        <div id="scoreboard">
-            <div id = "player-score">0</div>
-            <div id = "computer-score">0</div>
-        </div>
+        <section class="middle">
+            <div class="middle-left">
+                <button id = "button1" class="button rock" ></button>
+                <button id = "button2" class="button paper" ></button>
+                <button id = "button3" class="button scissors" ></button>
+            </div>
+            <div class = "middle-right">
+                <button id = "button4" class="button rock" ></button>
+                <button id = "button5" class="button paper" ></button>
+                <button id = "button6" class="button scissors" ></button>
+            </div>
+        </section>
+        <section>
+            <div class = "middle-bottom">
+                <div id="round-results">Blank</div>
+            </div>
+        </section>
+        
+        <section class = "very-bottom">
+            <div id="scoreboard" class = "scoreboard">
+                <div class="scoreboard-top">
+                    <div>
+                        <p class="player-text">Player Score</p>
+                        <div id = "player-score" class="box">0</div>
+                    </div>
+                    <div>
+                        <p class="computer-text">Computer Score</p>
+                        <div id = "computer-score" class="box">0</div>
+                    </div>
+                </div>
+                <div class="scoreboard-bottom">
+                    <p class="round-count-text">Round Count</p>
+                    <div class="round-count-number box" id="round-count">0</div>
+                </div>
+            </div>
+            
     </main>
     
 </body>
